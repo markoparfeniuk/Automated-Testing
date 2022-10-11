@@ -26,7 +26,7 @@ namespace Tests.Steps
         [Then(@"I should see customer records sorted in descending order")]
         public void ThenIShouldSeeCustomerRecordsSortedInDescendingOrder()
         {
-            Assert.AreEqual(actualFirstNames, actualFirstNames);
+            Assert.AreEqual(actualFirstNames, expectedFirstNames);
         }
     }
 }
