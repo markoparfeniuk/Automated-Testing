@@ -4,7 +4,6 @@ namespace XYZ_Bank
 {
     public class CustomersPage : BasePage
     {
-
         public CustomersPage(IWebDriver webDriver) : base(webDriver)
         {
 
@@ -17,6 +16,5 @@ namespace XYZ_Bank
 
         public void ClickFirstName() => btnFirstName.Click();
         public List<string> GetFirstNames() => firstNameElements.Select(el => el.Text).ToList<string>();
-
     }
 }
