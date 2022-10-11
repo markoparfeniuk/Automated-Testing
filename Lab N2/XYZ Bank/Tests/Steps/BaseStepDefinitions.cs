@@ -1,22 +1,24 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium;
+using TechTalk.SpecFlow;
 
-namespace Tests
+namespace Tests.Steps
 {
-    public class BaseTest
+    [Binding]
+    public class BaseStepDefinitions
     {
         protected IWebDriver driver;
 
-        [SetUp]
-        public void SetUp()
+        [BeforeScenario("@smoke")]
+        public void BeforeScenarioWithTag()
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://www.globalsqa.com/angularJs-protractor/BankingProject/");
         }
 
-        [TearDown]
-        public void TearDown()
+        [AfterScenario("@smoke")]
+        public void AfterScenarioWithTag()
         {
             driver.Close();
         }
