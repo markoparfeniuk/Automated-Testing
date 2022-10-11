@@ -6,19 +6,19 @@ using TechTalk.SpecFlow;
 namespace Tests.Steps
 {
     [Binding]
-    public class BaseStepDefinitions
+    public class BaseSteps
     {
-        protected IWebDriver driver;
+        protected static IWebDriver driver;
 
-        [BeforeScenario("@smoke")]
-        public void BeforeScenarioWithTag()
+        [BeforeFeature]
+        public static void BeforeFeauture()
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://www.globalsqa.com/angularJs-protractor/BankingProject/");
         }
 
-        [AfterScenario("@smoke")]
-        public void AfterScenarioWithTag()
+        [AfterFeature]
+        public static void AfterFeature()
         {
             driver.Close();
         }
